@@ -22,7 +22,8 @@ public class GameEngine {
 
     }
 
-    public Situation getSituation() {
+    public Situation getSituation(Value[][] board) {
+
         return Situation.GAME_CONTINUES;
     }
 
@@ -31,13 +32,18 @@ public class GameEngine {
     }
 
     public String getBoardString(Value[][] board) {
+        char numOfRow = 'a';
         StringBuilder sb = new StringBuilder();
+        sb.append("\t1   2   3   4   5   6   7   8\n");
         for (Value[] row : board) {
+            sb.append(numOfRow).append("  ");
             for (Value cell : row) {
                 sb.append(cell).append("\t");
             }
-            sb.append("\n");
+            sb.append(numOfRow).append("\n");
+            numOfRow++;
         }
+        sb.append("\t1   2   3   4   5   6   7   8\n");
         return sb.toString();
     }
 }
