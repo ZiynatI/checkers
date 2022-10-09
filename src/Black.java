@@ -1,6 +1,24 @@
+import java.util.Scanner;
+
 public class Black implements Player {
-    @Override
-    public Square makeMove() {
-        return null;
+    private final Value value = Value.BLACK;
+    private final Scanner inputMove;
+
+    Black(Scanner inputMove) {
+        this.inputMove = inputMove;
     }
+
+    @Override
+    public Value getValue() {
+        return this.value;
+    }
+
+    @Override
+    public Square chooseSquare(Value[][] board) {
+        String move = inputMove.next();
+        return new Square(move.charAt(0), Character.getNumericValue(move.charAt(1)));
+
+    }
+
+
 }

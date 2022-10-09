@@ -1,3 +1,8 @@
+import java.util.Scanner;
+
 public interface Player {
-Square makeMove();
+    Value getValue();
+
+    Square chooseSquare(Value[][] board);
+
 }

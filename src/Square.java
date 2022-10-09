@@ -1,8 +1,8 @@
 public class Square {
-    public final int row;
+    public final char row;
     public final int column;
 
-    public Square(int row, int column) {
+    public Square(char row, int column) {
         this.column = column;
         this.row = row;
     }

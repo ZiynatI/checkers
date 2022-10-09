@@ -13,11 +13,25 @@ public class GameEngine {
                 {Value.LIGHT_SQUARE, Value.WHITE, Value.LIGHT_SQUARE, Value.EMPTY_SQUARE, Value.LIGHT_SQUARE, Value.BLACK, Value.LIGHT_SQUARE, Value.BLACK}};
 
         Scanner inputMove = new Scanner(System.in);
-        Player blackPlayer = new Black();
-        Player whitePlayer = new White();
+        Player blackPlayer = new Black(inputMove);
+        Player whitePlayer = new White(inputMove);
+        boolean isWhitePlayer = true;
         printBoard(board);
         do {
-
+            Player player = isWhitePlayer ? whitePlayer : blackPlayer;
+            Value v = player.getValue();
+            System.out.println("Choose square to move from");
+            Square movingFrom = player.chooseSquare(board);
+            board[movingFrom.row - 97][movingFrom.column] = Value.EMPTY_SQUARE;
+            System.out.println("Choose square to move to");
+            Square movingTo = player.chooseSquare(board);
+            board[movingTo.row - 97][movingTo.column] = v;
+            printBoard(board);
+            isWhitePlayer = !isWhitePlayer;
+            Situation situation = getSituation(board);
+            if (situation != Situation.GAME_CONTINUES) {
+                break;
+            }
         } while (true);
 
     }
