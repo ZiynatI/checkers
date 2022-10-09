@@ -37,7 +37,21 @@ public class GameEngine {
     }
 
     public Situation getSituation(Value[][] board) {
-
+        int blackPieces = 0;
+        int whitePieces = 0;
+        for (Value[] row : board) {
+            for (Value cell : row) {
+                if (cell == Value.BLACK) {
+                    blackPieces++;
+                } else if (cell == Value.WHITE) {
+                    whitePieces++;
+                }
+            }
+        }if(blackPieces==0){
+            return Situation.WHITE_WON;
+        }else if(whitePieces==0){
+            return Situation.BLACK_WON;
+        }
         return Situation.GAME_CONTINUES;
     }
 
