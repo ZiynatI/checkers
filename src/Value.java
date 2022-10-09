@@ -2,8 +2,8 @@ public enum Value {
 
     WHITE("⚫"),
     BLACK("⚪"),
-    EMPTY_SQUARE("  "),
-    LIGHT_SQUARE("▓▓");
+    EMPTY_SQUARE("  ");
+    //    LIGHT_SQUARE("▓▓");
 
 
     String displayValue;
