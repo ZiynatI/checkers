@@ -1,6 +1,6 @@
 public interface Player {
-    Value getValue();
+    Pieces getValue();
 
-    Square chooseSquare(Value[][] board);
+    Square chooseSquare(Pieces[][] board);
 
 }
