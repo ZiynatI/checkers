@@ -21,7 +21,14 @@ public class GameBoard {
     @Override
     public String toString() {
         StringBuilder boardString = new StringBuilder();
-
+        int numOfSquares = 0;
+        for (Map.Entry<Square, Pieces> cell : squares.entrySet()) {
+            boardString.append(cell.getValue());
+            numOfSquares++;
+            if (numOfSquares % 8 == 0) {
+                boardString.append("\n");
+            }
+        }
         return boardString.toString();
     }
 }
