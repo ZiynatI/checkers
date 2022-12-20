@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class White implements Player {
-    private final Pieces pieces = Pieces.WHITE;
+    private final SituationOfSquare pieces = SituationOfSquare.WHITE;
     private final Scanner inputMove;
 
     White(Scanner inputMove) {
@@ -9,13 +9,13 @@ public class White implements Player {
     }
 
     @Override
-    public Pieces getValue() {
+    public SituationOfSquare getValue() {
         return this.pieces;
     }
 
     @Override
-    public Square chooseSquare(Pieces[][] board) {
+    public Square chooseSquare(GameBoard board) {
         String move = inputMove.next();
-        return new Square(move.charAt(0), Character.getNumericValue(move.charAt(1)) - 1);
+        return new Square(move.charAt(0), Character.getNumericValue(move.charAt(1)) - 1, true);
     }
 }

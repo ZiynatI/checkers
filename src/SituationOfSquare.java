@@ -1,4 +1,4 @@
-public enum Pieces {
+public enum SituationOfSquare {
 
     WHITE("W"),
     BLACK("B"),
@@ -6,7 +6,7 @@ public enum Pieces {
 
     String st;
 
-    Pieces(String st) {
+    SituationOfSquare(String st) {
         this.st = st;
     }
 

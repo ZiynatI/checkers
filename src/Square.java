@@ -1,10 +1,11 @@
 public class Square {
-    public final char row;
-    public final int column;
-    public String color;
+    public final int row;
+    public final char column;
+    public final boolean isBlack;
 
-    public Square(char row, int column) {
+    public Square(char column,int row,boolean isBlack ) {
         this.column = column;
         this.row = row;
+        this.isBlack=isBlack;
     }
 }
