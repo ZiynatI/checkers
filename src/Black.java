@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Black implements Player {
-    private final SituationOfSquare pieces = SituationOfSquare.BLACK;
+    private final SituationOfSquare pieces = SituationOfSquare.BLACK_PIECE;
     private final Scanner inputMove;
 
     Black(Scanner inputMove) {

@@ -1,8 +1,9 @@
 public enum SituationOfSquare {
 
-    WHITE("W"),
-    BLACK("B"),
-    EMPTY_SQUARE("-");
+    WHITE_PIECE("W"),
+    BLACK_PIECE("B"),
+    EMPTY_SQUARE("-"),
+    WHITE_SQUARE("▓▓");
 
     String st;
 
