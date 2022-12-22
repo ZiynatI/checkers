@@ -7,6 +7,14 @@ public class GameBoard {
         this.board = getNewSquares();
     }
 
+    public SituationOfSquare[][] getBoard() {
+        return board;
+    }
+
+    public void put(Square square, SituationOfSquare playersValue) {
+        board[square.row][square.column] = playersValue;
+    }
+
     private SituationOfSquare[][] getNewSquares() {
         SituationOfSquare[][] startBoard = new SituationOfSquare[8][8];
         LinkedList<SituationOfSquare> squares = new LinkedList<>();
