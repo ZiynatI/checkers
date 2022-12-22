@@ -15,12 +15,15 @@ public class GameEngine {
         do {
             Player player = isWhitePlayer ? whitePlayer : blackPlayer;
             SituationOfSquare v = player.getValue();
+            if(!player.takePiece(board).equals(null)){
+
+            }else {
             System.out.println("Choose square to move from");
             Square movingFrom = player.chooseSquare(board);
             board.board[movingFrom.row - 97][movingFrom.column] = SituationOfSquare.EMPTY_SQUARE;
             System.out.println("Choose square to move to");
             Square movingTo = player.chooseSquare(board);
-            board.board[movingTo.row - 97][movingTo.column] = v;
+            board.board[movingTo.row - 97][movingTo.column] = v;}
             System.out.println(board);
             isWhitePlayer = !isWhitePlayer;
             Situation situation = getSituation(board);

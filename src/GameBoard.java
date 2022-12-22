@@ -12,11 +12,11 @@ public class GameBoard {
         LinkedList<SituationOfSquare> squares = new LinkedList<>();
         boolean isBlack;
         SituationOfSquare thisSituation;
-        for (int i = 0; i <8; i++) {
+        for (int i = 0; i < 8; i++) {
             isBlack = i % 2 != 0;
             if (i < 3) {
                 thisSituation = SituationOfSquare.BLACK_PIECE;
-            } else if (i <5) {
+            } else if (i < 5) {
                 thisSituation = SituationOfSquare.EMPTY_SQUARE;
             } else {
                 thisSituation = SituationOfSquare.WHITE_PIECE;
@@ -45,19 +45,21 @@ public class GameBoard {
         }
         return boardString.toString();
     }
-public  String getBoardString() {
-    int numOfRow = 8;
-    StringBuilder sb = new StringBuilder();
-    sb.append("\ta   b   c   d   e   f   g   h\n");
-    for (SituationOfSquare[] row : board) {
-        sb.append(numOfRow).append("  ");
-        for (SituationOfSquare cell : row) {
-            sb.append(cell).append("\t");
+
+
+    public String getBoardString() {
+        int numOfRow = 8;
+        StringBuilder sb = new StringBuilder();
+        sb.append("\ta   b   c   d   e   f   g   h\n");
+        for (SituationOfSquare[] row : board) {
+            sb.append(numOfRow).append("  ");
+            for (SituationOfSquare cell : row) {
+                sb.append(cell).append("\t");
+            }
+            sb.append(numOfRow).append("\n");
+            numOfRow--;
         }
-        sb.append(numOfRow).append("\n");
-        numOfRow--;
+        sb.append("\ta   b   c   d   e   f   g   h\n");
+        return sb.toString();
     }
-    sb.append("\ta   b   c   d   e   f   g   h\n");
-    return sb.toString();
-}
 }

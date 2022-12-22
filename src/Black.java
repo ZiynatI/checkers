@@ -1,10 +1,12 @@
 import java.util.Scanner;
 
 public class Black implements Player {
+    private int numberOfPieces;
     private final SituationOfSquare pieces = SituationOfSquare.BLACK_PIECE;
     private final Scanner inputMove;
 
     Black(Scanner inputMove) {
+        this.numberOfPieces = 12;
         this.inputMove = inputMove;
     }
 
