@@ -7,12 +7,8 @@ public class GameBoard {
         this.board = getNewSquares();
     }
 
-    public SituationOfSquare[][] getBoard() {
-        return board;
-    }
-
     public void put(Square square, SituationOfSquare playersValue) {
-        board[square.row][square.column] = playersValue;
+        board[(square.row-8)*(-1)][square.column-97] = playersValue;
     }
 
     private SituationOfSquare[][] getNewSquares() {

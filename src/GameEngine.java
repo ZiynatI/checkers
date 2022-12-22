@@ -16,7 +16,7 @@ public class GameEngine {
         do {
             Player player = isWhitePlayer ? whitePlayer : blackPlayer;
             SituationOfSquare v = player.getValue();
-            if (!player.takePiece(board).equals(null)) {
+            if (!player.takePiece(board,isWhitePlayer?blackPlayer.getValue():whitePlayer.getValue()).equals(null)) {
 
             } else {
                 System.out.println("Choose square to move from");
