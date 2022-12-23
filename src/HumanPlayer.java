@@ -1,18 +1,19 @@
 import java.util.Scanner;
 
-public class Black extends Player {
+public class HumanPlayer extends Player {
     private int numberOfPieces;
-    private final SituationOfSquare pieces = SituationOfSquare.BLACK_PIECE;
+    private final SituationOfSquare piecesColor;
     private final Scanner inputMove;
 
-    Black(Scanner inputMove) {
+    HumanPlayer(Scanner inputMove, SituationOfSquare piecesColor) {
         this.numberOfPieces = 12;
+        this.piecesColor = piecesColor;
         this.inputMove = inputMove;
     }
 
     @Override
     public SituationOfSquare getValue() {
-        return this.pieces;
+        return this.piecesColor;
     }
 
     @Override

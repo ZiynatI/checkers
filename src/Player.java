@@ -1,13 +1,13 @@
 public abstract class Player {
-    abstract SituationOfSquare getValue();
+   protected abstract SituationOfSquare getValue();
 
-   abstract Square chooseSquare(GameBoard board);
+  protected abstract Square chooseSquare(GameBoard board);
 
     /**
      * Returns Square where piece should go to take another piece.If there are not pieces which can be taken, returns
      * null.
      */
-    Square takePiece(GameBoard board, SituationOfSquare enemysValue) {
+   protected Square takePiece(GameBoard board, SituationOfSquare enemysValue) {
 //
 //        for (int row = 0; row < 8; row++) {
 //            for (int column = 0; column < 8; column++) {

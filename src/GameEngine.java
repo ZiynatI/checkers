@@ -1,22 +1,18 @@
 import java.util.Scanner;
 
 public class GameEngine {
-    public static void main(String[] args) {
-        GameBoard board = new GameBoard();
-        //        System.out.println(getBoardString(board.board));
-    }
 
     public void play() {
         GameBoard board = new GameBoard();
         Scanner inputMove = new Scanner(System.in);
-        Player blackPlayer = new Black(inputMove);
-        Player whitePlayer = new White(inputMove);
+        Player whitePlayer = new HumanPlayer(inputMove,SituationOfSquare.WHITE_PIECE);
+        Player blackPlayer = new HumanPlayer(inputMove,SituationOfSquare.BLACK_PIECE);
         boolean isWhitePlayer = true;
         System.out.println(board);
         do {
             Player player = isWhitePlayer ? whitePlayer : blackPlayer;
             SituationOfSquare v = player.getValue();
-            if (!player.takePiece(board,isWhitePlayer?blackPlayer.getValue():whitePlayer.getValue()).equals(null)) {
+            if (!player.takePiece(board, isWhitePlayer ? blackPlayer.getValue() : whitePlayer.getValue()).equals(null)) {
 
             } else {
                 System.out.println("Choose square to move from");
