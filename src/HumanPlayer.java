@@ -22,6 +22,4 @@ public class HumanPlayer extends Player {
         return new Square(move.charAt(0), Character.getNumericValue(move.charAt(1)));
 
     }
-
-
 }
